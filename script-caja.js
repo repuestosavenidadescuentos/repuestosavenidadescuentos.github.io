@@ -34,6 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
       cuponDiv.textContent = `🎉 ¡Obtuviste ${descuento}% de DESCUENTO! 🎁`;
       cuponDiv.hidden = false;
       localStorage.setItem("ultimaCaja", Date.now().toString());
-    }, 2000);
+    }, 3000);
   });
 });

@@ -16,3 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     desarrolloModal.style.display = "none";
   });
 });
+
+function abrirCajaF(){
+  window.location.href = "caja.html"
+}

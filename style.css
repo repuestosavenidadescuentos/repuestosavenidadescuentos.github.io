@@ -1,7 +1,10 @@
+div, a, p, button {
+  user-select: none;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom, #1a1c22, #2f3542);
-  background-image: url('https://pixabay.com/get/gf29e3de31ca4c20d06a1e47b4fb6a32caab3b6c85f338c3db5c1600515c83f70f4e92751f1bbdc5a58254250d20e7bb86340f7cfdb0aefc74e57700be87b4f68c23.jpg');
+  background: radial-gradient(#0000000e, #0000007e), url('fondo.jpg') no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
   color: #ffd700;
@@ -41,6 +44,15 @@ main.contenedor-caja {
   overflow: hidden;
   margin-bottom: 1rem;
 }
+
+.video-sorpresa video {
+  display: block;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 button#abrirCajaBtn {
   padding: 1rem 2rem;
   font-size: 1.2rem;
@@ -62,6 +74,7 @@ button#abrirCajaBtn:hover {
   border-radius: 20px;
   margin-top: 1rem;
   animation: aparecer 0.5s ease-out forwards;
+  margin-bottom: 16px;
 }
 @keyframes aparecer {
   from { opacity: 0; transform: scale(0.8); }
