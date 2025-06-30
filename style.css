@@ -1,0 +1,79 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #1a1c22, #2f3542);
+  background-image: url('https://pixabay.com/get/gf29e3de31ca4c20d06a1e47b4fb6a32caab3b6c85f338c3db5c1600515c83f70f4e92751f1bbdc5a58254250d20e7bb86340f7cfdb0aefc74e57700be87b4f68c23.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  color: #ffd700;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main.contenedor-caja {
+  text-align: center;
+  padding: 2rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.banner-flotante {
+  background: linear-gradient(90deg, #ffd700, #ff8c00);
+  color: #000;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  animation: parpadeo 1s infinite alternate;
+}
+@keyframes parpadeo {
+  from { opacity: 1; }
+  to { opacity: 0.6; }
+}
+
+.video-sorpresa {
+  width: 260px;
+  height: 260px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+button#abrirCajaBtn {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #ffd700, #b8860b);
+  color: #000;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+button#abrirCajaBtn:hover {
+  transform: scale(1.05);
+}
+.cupon-premio {
+  background: linear-gradient(135deg, #ffd700, #ff8c00);
+  color: #000;
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  margin-top: 1rem;
+  animation: aparecer 0.5s ease-out forwards;
+}
+@keyframes aparecer {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+.bloqueo-msg {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #ffaaaa;
+}
+footer {
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+  padding: 1rem;
+}

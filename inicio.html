@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="ahutor" content="Manuel Del Rio Socorro">
+  <title>Zona de Juegos</title>
+  <link rel="stylesheet" href="inicio.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>🎮 Zona de Juegos y Recompensas</h1>
+    <div class="auth-buttons">
+      <button class="login"><i class="fas fa-sign-in-alt"></i> Login</button>
+      <button class="register"><i class="fas fa-user-plus"></i> Register</button>
+    </div>
+  </header>
+  <main>
+    <a href="caja.html" class="banner-flotante">🔥 ¡Obtené tu cupón de hasta 50%! 🔥</a>
+    <section class="juegos-lista">
+      <div class="juego-card disponible" id="cajaSorpresa">
+        <a href="caja.html">
+          <span class="emoji">🎁</span>
+          <h2>Caja Sorpresa</h2>
+          <p>¡Desbloqueá un cupón!</p>
+        </a>
+      </div>
+      <div class="juego-card futuro" id="luchaBot">
+        <span class="emoji">🤖</span>
+        <h2>Lucha contra Bot</h2>
+        <p>En desarrollo</p>
+      </div>
+      <div class="juego-card futuro" id="raspaYgana">
+        <span class="emoji">🪙</span>
+        <h2>Raspa y Gana</h2>
+        <p>Muy pronto</p>
+      </div>
+      <div class="juego-card futuro" id="ruletaSuerte">
+        <span class="emoji">🎡</span>
+        <h2>Ruleta de la Suerte</h2>
+        <p>Próximamente</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <small>&copy; 2025 Repuestos Avenida Chuy - Zona de Juegos</small>
+  </footer>
+  <div id="desarrolloModal" class="modal">
+    <div class="modal-content">
+      <p>Este juego está en desarrollo. ¡Vuelve más tarde!</p>
+      <button class="close-modal">Cerrar</button>
+    </div>
+  </div>
+  <script src="script-inicio.js"></script>
+</body>
+</html>
