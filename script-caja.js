@@ -7,21 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const abrirBtn = document.getElementById("abrirCajaBtn");
   const bloqueoMsg = document.getElementById("bloqueo-msg");
 
-  if (testingMode) {
-    localStorage.removeItem("ultimaCaja");
-  }
+  // El video no se reproduce automáticamente
+  videoCaja.pause();
+  videoDiv.hidden = false;
 
-  const ahora = Date.now();
-  const ultimaVez = localStorage.getItem("ultimaCaja");
-
-  if (!testingMode && ultimaVez && ahora - parseInt(ultimaVez) < 86400000) {
+  const reproducirCaja = () => {
     abrirBtn.disabled = true;
-    bloqueoMsg.hidden = false;
-  }
-
-  abrirBtn.addEventListener("click", () => {
-    abrirBtn.disabled = true;
-    videoDiv.hidden = false;
     cuponDiv.hidden = true;
     bloqueoMsg.hidden = true;
 
@@ -34,6 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
       cuponDiv.textContent = `🎉 ¡Obtuviste ${descuento}% de DESCUENTO! 🎁`;
       cuponDiv.hidden = false;
       localStorage.setItem("ultimaCaja", Date.now().toString());
-    }, 3000);
-  });
+    }, 2000);
+  };
+
+  abrirBtn.addEventListener("click", reproducirCaja);
+  videoCaja.addEventListener("click", reproducirCaja);
 });
