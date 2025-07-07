@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Manuel Del Rio Socorro">
+  <title>Caja Sorpresa - ¡Obtén tu Descuento!</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <main class="contenedor-caja">
+    <a href="index.html" class="boton-atras">⬅️ Volver</a>
+    
+    <div class="video-sorpresa" id="video-container">
+      <video src="assets/sorpresa.mp4" id="videoCaja" muted playsinline></video>
+    </div>
+    
+    <div id="cupon-resultado" class="cupon-premio d-none"></div>
+    <a id="cupon-guardado" class="cupon-guardado d-none"></a>
+    
+    <button id="abrirCajaBtn" class="btn btn-primary">ABRIR CAJA</button>
+
+    <a id="usarCuponBtn" class="btn btn-success d-none">
+        <i class="fab fa-whatsapp"></i> USAR MI CUPÓN
+    </a>
+    
+    <p id="bloqueo-msg" class="bloqueo-msg d-none"></p>
+  </main>
+
+  <footer>
+    <small>&copy; 2025 Repuestos Avenida Chuy - Zona de Juegos</small>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

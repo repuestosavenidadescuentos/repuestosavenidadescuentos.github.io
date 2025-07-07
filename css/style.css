@@ -1,0 +1,329 @@
+/* --- Clase de Utilidad para Ocultar Elementos --- */
+.d-none {
+  display: none !important;
+}
+
+/* --- Estilos Globales y Base --- */
+:root {
+  --primary-color: #ffd700;
+  --secondary-color: #ff8c00;
+  --dark-gold: #b8860b;
+  --dark-bg: rgba(0, 0, 0, 0.7);
+  --text-light: #f0f0f0;
+  --text-dark: #000;
+  --success-color: #25D366;
+  --success-hover: #128C7E;
+  --saved-coupon-bg: linear-gradient(135deg, #2980b9, #3498db);
+}
+div, a, p, button {
+  user-select: none;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url('../assets/fondo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: var(--text-light);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  text-align: center; /* Asegura que el contenido de main esté centrado */
+}
+
+footer {
+  background: var(--dark-bg);
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+}
+
+/* --- Componentes Reutilizables --- */
+.btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(90deg, var(--primary-color), var(--dark-gold));
+  color: var(--text-dark);
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: inline-flex; /* Para alinear íconos y texto */
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
+
+.btn:disabled {
+  background: #999;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.banner-flotante {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  color: var(--text-dark);
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  animation: parpadeo 1.5s infinite alternate;
+  margin-bottom: 2rem;
+}
+
+@keyframes parpadeo {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0.7; transform: scale(1.02); }
+}
+
+/* --- Estilos Página Principal (index.html) --- */
+header {
+  background: var(--dark-bg);
+  color: var(--primary-color);
+  text-align: center;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.auth-buttons {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+.auth-buttons .btn {
+  margin-left: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.juegos-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 960px;
+}
+
+.juego-card {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid var(--primary-color);
+  border-radius: 16px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.juego-card.disponible {
+  cursor: pointer;
+}
+
+.juego-card.futuro {
+  filter: grayscale(80%);
+  cursor: not-allowed;
+}
+
+.juego-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+}
+
+.juego-card a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.emoji {
+  font-size: 2.5rem;
+}
+
+/* --- Estilos Página Caja Sorpresa (caja.html) --- */
+.contenedor-caja {
+  text-align: center;
+  justify-content: center;
+  position: relative; /* Para el botón de atrás */
+  width: 100%;
+}
+
+.boton-atras {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--text-light);
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.boton-atras:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.video-sorpresa {
+  width: 260px;
+  height: 260px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  background: rgba(255, 215, 0, 0.08);
+  animation: glowPulse 2s infinite alternate;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  display: inline-block;
+}
+
+@keyframes glowPulse {
+  from { box-shadow: 0 0 10px rgba(255, 215, 0, 0.2), 0 0 20px rgba(255, 215, 0, 0.1); }
+  to { box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 40px rgba(255, 140, 0, 0.2); }
+}
+
+.video-sorpresa video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+#abrirCajaBtn {
+  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+}
+
+.cupon-premio {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--text-dark);
+  font-size: 1.8rem;
+  font-weight: 800;
+  padding: 1.5rem 2.5rem;
+  border-radius: 20px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  animation: aparecer 0.6s ease-out forwards;
+  display: inline-block;
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) translateY(20px);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1.05) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.btn-success {
+  background: var(--success-color);
+  color: white;
+  margin-top: 1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-success:hover {
+  background: var(--success-hover);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+.cupon-guardado {
+  background: var(--saved-coupon-bg);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 1rem;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cupon-guardado:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.bloqueo-msg {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #ffaaaa;
+  font-weight: 600;
+}
+
+/* --- Estilos del Modal --- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background-color: #222;
+  border: 1px solid var(--primary-color);
+  color: var(--text-light);
+  margin: 15% auto;
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+}
+
+.close-modal {
+  margin-top: 1rem;
+}
+
+/* --- Media Queries para Responsividad --- */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  .auth-buttons {
+    position: static;
+    transform: none;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .juegos-lista {
+    grid-template-columns: 1fr;
+  }
+  .boton-atras {
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+}
