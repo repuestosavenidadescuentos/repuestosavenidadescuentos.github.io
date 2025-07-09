@@ -26,7 +26,8 @@ body {
   color: var(--text-light);
   margin: 0;
   padding: 0;
-  min-height: 100vh;
+  width: 100%;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
 }
@@ -41,9 +42,9 @@ main {
 }
 
 footer {
+  margin-top: auto;
   background: var(--dark-bg);
   text-align: center;
-  padding: 1rem;
   width: 100%;
 }
 
@@ -156,7 +157,7 @@ header {
   text-align: center;
   justify-content: center;
   position: relative; /* Para el botón de atrás */
-  width: 100%;
+  width: 96%;
 }
 
 .boton-atras {

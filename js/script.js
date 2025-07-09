@@ -153,8 +153,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       setTimeout(() => {
         videoContainer.hidden = true;
+
+        let listaD = [5,6,7,8,9,10];
+        let numeroD = Math.floor(Math.random() * listaD.length);
         
-        const descuento = Math.floor(Math.random() * 7) + 2;
+        const descuento = listaD[numeroD];
         const codigo = `aF5${descuento}`;
         
         const mensajeWhatsApp = `Este es mi descuento (${descuento}%) código: ${codigo}`;
@@ -202,3 +205,15 @@ document.addEventListener("DOMContentLoaded", () => {
     inicializarPaginaCaja(); // Ejecuta la función al cargar la página
   }
 });
+
+
+
+// 
+
+let titulo = "Zona de Juegos y Recompensas"
+
+if (titulo == document.title){
+  document.getElementById('cajaSorpresa').addEventListener('click', (e)=>{
+    window.location.href = "caja.html";
+  });
+}
